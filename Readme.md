@@ -1,12 +1,12 @@
-#pull an image
+# pull an image
 >docker pull <imagename>
 
-#Run image
+# Run image
 >docker run <imageid>
 
-#list running containers
+# list running containers
 >docker ps
-##list all containers
+## list all containers
 
 # Tagging Docker images
 >docker build -t username/imagename:version .
