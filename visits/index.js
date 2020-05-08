@@ -10,7 +10,7 @@ const client = redis.createClient({
 client.set('visits', 0);
 
 app.get('/', (req, res) => {
-    process.exit(0);
+    //process.exit(0); use non 0 for failure exits
     client.get('visits', (err, visits) => {
         res.send('Number of visitsis ' + visits);
         client.set('visits', parseInt(visits) + 1);

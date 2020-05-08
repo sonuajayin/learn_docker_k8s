@@ -2,5 +2,5 @@
 
 ## single container with application
 >/simpleweb
-## Multiple docker containers
+## Working with multiple docker containers (docker compose)
 >/visits
