@@ -6,7 +6,7 @@ before_install:
     - docker build -t sonuajayin/react_frontend -f ./prod_workflow/frontend/Dockerfile.dev ./prod_workflow/frontend/
 
 script:
-    - docker run sonuajayin/react_frontend npm run test #-- --coverage
+    - docker run sonuajayin/react_frontend npm run test -- --coverage
 
 # if my docker file was in root directory the command could have been as below
 # - docker build -t sonuajayin/react_frontend -f Dockerfile.dev .
