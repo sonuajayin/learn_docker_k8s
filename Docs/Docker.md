@@ -1,17 +1,17 @@
 #Learning Docker
 
-## pull an image
+pull an image
 >docker pull <imagename>
 
-## list images
+list images
 >docker images
 
-## Run image
+Run image
 >docker run <imageid>
-## Run image but in backgroud (will not display logs)
+Run image but in backgroud (will not display logs)
 >docker run -d <imageid>
 
-## list running containers
+list running containers
 >docker ps
 
 list all containers
@@ -64,6 +64,7 @@ present working directory
 
 Map volume to docker (-it is used for interactive mode can use -d (for run in bakground) or nothing)
 >docker run -it -p 3000:300 -v /app/node_modules -v $(pwd):/app <imageid>  
+
 Here everything in present working  directory is mapped to workdirectoy in docker  
 also we ae creating placeholder for the node_modules in the workdir (also known as bookmarking volumes), that mean when the docker is built it already has the node_modules folder so we dont mess with it. only rest of the files are mapped with volume  
 
