@@ -1,6 +1,5 @@
 #Build Phase
-FROM node:alpine as builder
-#if as builder not added we can use --from=0
+FROM node:alpine
 WORKDIR '/app'
 COPY package*.json ./
 RUN npm install
@@ -12,7 +11,7 @@ FROM nginx
 #Expose the port : elasticbeanstalk will look for this
 EXPOSE 80
 #Copy files
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=0 /app/build /usr/share/nginx/html
 
 # To build this run >docker build .
 # To run docker run [-it] -p 8080:80 <imageid>
