@@ -8,7 +8,8 @@ before_install:
     #- docker build -t sonuajayin/react_frontend -f ./prod_workflow/frontend/Dockerfile.dev ./prod_workflow/frontend/
 
 script:
-    - docker run -e CI=true sonuajayin/react_frontend npm run test -- --coverage
+    - echo "deploy start"
+    #- docker run -e CI=true sonuajayin/react_frontend npm run test -- --coverage
 
 deploy:
     provider: elasticbeanstalk
