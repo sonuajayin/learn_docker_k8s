@@ -8,6 +8,19 @@ before_install:
 script:
     - docker run -e CI=true sonuajayin/react_frontend npm run test -- --coverage
 
+deploy:
+    provider: elasticbeanstalk
+    region: ap-south-1
+    app: "docker" #name of app in aws
+    env: "Docker-env"
+    bucket: "elasticbeanstalk-ap-south-1-921324889958"
+    bucket_path: "docker"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+        secure: "$AWS_SECRET_KEY"
+
 # if my docker file was in root directory the command could have been as below
 # - docker build -t sonuajayin/react_frontend -f Dockerfile.dev .
 # -e CI=true is for test to exit
