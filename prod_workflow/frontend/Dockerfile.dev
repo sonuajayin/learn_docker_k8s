@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+# below is not needed since we are mounting local volume but I will leave it as reminder
+COPY . .
+
+CMD ["npm", "run", "start"]
