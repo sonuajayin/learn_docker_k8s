@@ -1,4 +1,4 @@
-Learning Docker & K8s
+#Learning Docker
 
 ## pull an image
 >docker pull <imagename>
@@ -64,15 +64,16 @@ present working directory
 
 Map volume to docker (-it is used for interactive mode can use -d (for run in bakground) or nothing)
 >docker run -it -p 3000:300 -v /app/node_modules -v $(pwd):/app <imageid>
-### here everything in present working  directory is mapped to workdirectoy in docker
-### also we ae creating placeholder for the node_modules in the workdir (also known as bookmarking volumes), that mean when the docker is built it already has the node_modules folder so we dont mess with it. only rest of the files are mapped with volume
+here everything in present working  directory is mapped to workdirectoy in docker  
+also we ae creating placeholder for the node_modules in the workdir (also known as bookmarking volumes), that mean when the docker is built it already has the node_modules folder so we dont mess with it. only rest of the files are mapped with volume  
 
-### run tests inside docker image (node app), you may not need -it
+
+run tests inside docker image (node app), you may not need -it
 >docker run -it <imageid> npm run test
 above will only have the snapshot but not realtime changes. in case you will need to rebuild.
 
-### run tests with volumes mapped.
+run tests with volumes mapped.
 >docker exec -it <running_container_where_volume_ismapped> npm run test
 
-### attach to stdin, stdout and stderr of a container
+attach to stdin, stdout and stderr of a container
 >docker attach <runningcontaainerid>
