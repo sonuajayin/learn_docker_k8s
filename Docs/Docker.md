@@ -1,4 +1,4 @@
-#Learning Docker
+# Docker
 
 pull an image
 >docker pull <imagename>
