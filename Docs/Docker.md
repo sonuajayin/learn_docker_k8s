@@ -63,8 +63,8 @@ present working directory
 >pwd
 
 Map volume to docker (-it is used for interactive mode can use -d (for run in bakground) or nothing)
->docker run -it -p 3000:300 -v /app/node_modules -v $(pwd):/app <imageid>
-here everything in present working  directory is mapped to workdirectoy in docker  
+>docker run -it -p 3000:300 -v /app/node_modules -v $(pwd):/app <imageid>  
+Here everything in present working  directory is mapped to workdirectoy in docker  
 also we ae creating placeholder for the node_modules in the workdir (also known as bookmarking volumes), that mean when the docker is built it already has the node_modules folder so we dont mess with it. only rest of the files are mapped with volume  
 
 
