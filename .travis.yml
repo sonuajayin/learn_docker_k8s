@@ -18,8 +18,7 @@ deploy:
     on:
         branch: master
     access_key_id: $AWS_ACCESS_KEY
-    secret_access_key:
-        secure: "$AWS_SECRET_KEY"
+    secret_access_key: $AWS_SECRET_KEY
 
 # if my docker file was in root directory the command could have been as below
 # - docker build -t sonuajayin/react_frontend -f Dockerfile.dev .
