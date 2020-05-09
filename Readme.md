@@ -10,3 +10,6 @@ Working with production workflow
 
 multi step builds
 >/prod_workflow/frontend/Dockerfile
+
+using travis ci and aws elastic beanstalk
+>/.travis.yml
