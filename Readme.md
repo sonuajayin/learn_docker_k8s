@@ -8,5 +8,5 @@
 ## Working with production workflow
 >/prod_workflow
 
-## multi step builds
+multi step builds
 >/prod_workflow/frontend/Dockerfile
