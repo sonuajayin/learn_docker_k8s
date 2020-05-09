@@ -1,11 +1,11 @@
 # Learning Docker and K8s
 
-## single container with application
+###single container with application
 >/simpleweb
-## Working with multiple docker containers (docker compose)
+Working with multiple docker containers (docker compose)
 >/visits
 
-## Working with production workflow
+Working with production workflow
 >/prod_workflow
 
 multi step builds
