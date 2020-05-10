@@ -10,3 +10,5 @@ https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-task-definiti
         }
     ]
 
+Environment Properties will be entered in elasticbeanstal>environment>configuration>software
+
