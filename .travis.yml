@@ -26,7 +26,7 @@ after_success:
         edge: true
         provider: elasticbeanstalk
         region: ap-south-1
-        app: "multi-docker" #name of app in aws
+        app: "multi-docker"
         env: "MultiDocker-env"
         bucket: "elasticbeanstalk-ap-south-1-921324889958"
         bucket_path: "docker-multi"
