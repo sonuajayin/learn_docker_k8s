@@ -12,3 +12,5 @@
 
 4. Start minikube  
 >minikube start
+
+### Alternatively Docker Desktop's Kubernetes can be used instead of Minikube
