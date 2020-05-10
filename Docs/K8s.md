@@ -1,22 +1,23 @@
-# Kubernetes
+# K8s
 
-### Installation for local  
-1. Install Virtual Box from https://www.virtualbox.org/wiki/Linux_Downloads. Test Installation  
->VBoxManage -version  
+A Pod should be always smallest posible logical group of container.  
 
-2. Install Kubectl : https://kubernetes.io/docs/tasks/tools/install-kubectl/ and verify.  
->kubectl version --client
+Node Port should be within 30000-32767  
 
-3. Install Minikube https://kubernetes.io/docs/tasks/tools/install-minikube/ and verify.  
->minikube version
+Apply config file to kubectl (-f is for file) (filename can be path of file)
+>kubectl apply -f <filename>  
 
-4. Start minikube  
->minikube start
+Check wheter they are create  
+>kubectl get pods  
 
-5. Check all is running, First minikube
->minikube status
+Get all services running  
+>kubectl get services  
 
-6. kubectl check
->kubectl cluster-info
+Get the IP of minikube (since the services on local are running under that)  
+>minikube ip  
+Above IP recieved will be used to run the application in local dev browser  
 
-### Alternatively Docker Desktop's Kubernetes can be used instead of Minikube
+Try Killing the running container by finding the container by docker ps.  
+>docker kill <runningcontainerid>  
+Run docker ps again and you will see it is again there  
+Also see by running get pods and you will see restarts is 1.

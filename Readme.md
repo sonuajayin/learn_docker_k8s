@@ -17,3 +17,6 @@ using travis ci and aws elastic beanstalk
 Multi container docker application
 >/complex  
 architecture and flow in folder, and also being deployed to ecs
+
+K8s simple Project  
+>/simplek8s
