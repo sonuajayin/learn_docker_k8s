@@ -1,4 +1,4 @@
-# this file if sor prod workflow as of now its renamed, remove _prodworkflow from filename to use.
+# this file if sor prod workflow as of now its renamed, remove old_ and _prodworkflow from filename to use.
 language: node_js
 sudo: required
 services:
