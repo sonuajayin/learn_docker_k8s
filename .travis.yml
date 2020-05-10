@@ -22,15 +22,15 @@ after_success:
     - docker push sonuajayin/multi-server
     - docker push sonuajayin/multi-worker
 
-    deploy:
-        edge: true
-        provider: elasticbeanstalk
-        region: ap-south-1
-        app: "multi-docker"
-        env: "MultiDocker-env"
-        bucket: "elasticbeanstalk-ap-south-1-921324889958"
-        bucket_path: "docker-multi"
-        on:
-            branch: master
-        access_key_id: $AWS_ACCESS_KEY
-        secret_access_key: $AWS_SECRET_KEY
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: ap-south-1
+    app: "multi-docker"
+    env: "MultiDocker-env"
+    bucket: "elasticbeanstalk-ap-south-1-921324889958"
+    bucket_path: "docker-multi"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
