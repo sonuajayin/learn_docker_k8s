@@ -1,30 +1,23 @@
-language: node_js
 sudo: required
 services:
     - docker
 
 before_install:
-    - docker build -t sonuajayin/react_frontend ./prod_workflow/frontend/
-    #- docker build -t sonuajayin/react_frontend -f ./prod_workflow/frontend/Dockerfile.dev ./prod_workflow/frontend/
+    - docker build -t sonuajayin/react-test -f ./complex/client/Dockerfile.dev ./complex/client
 
 script:
-    - echo "deploy start"
-    #- docker run -e CI=true sonuajayin/react_frontend npm run test -- --coverage
+    - docker run -e CI=true sonuajayin/react-test npm run test -- --coverage
 
-deploy:
-    provider: elasticbeanstalk
-    region: ap-south-1
-    app: "docker" #name of app in aws
-    env: "Docker-env"
-    bucket: "elasticbeanstalk-ap-south-1-921324889958"
-    bucket_path: "docker"
-    on:
-        branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-
-# if my docker file was in root directory the command could have been as below
-# - docker build -t sonuajayin/react_frontend -f Dockerfile.dev .
-# -e CI=true is for test to exit
-# test script is commented bcoz optimized build only has prod ready.
-# to test you can add stage for test using dev dockerfile
+after_success:
+    - docker build -t sonuajayin/multi-client ./complex/client
+    - docker build -t sonuajayin/multi-nginx ./complex/nginx
+    - docker build -t sonuajayin/multi-server ./complex/server
+    - docker build -t sonuajayin/multi-worker ./complex/worker
+    # Login to Docker CLI
+    # Go to travis settings for the project and add env variables
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    # Take those images and push to docker hub
+    - docker push sonuajayin/multi-client
+    - docker push sonuajayin/multi-nginx
+    - docker push sonuajayin/multi-server
+    - docker push sonuajayin/multi-worker

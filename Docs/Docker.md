@@ -77,4 +77,7 @@ run tests with volumes mapped.
 >docker exec -it <running_container_where_volume_ismapped> npm run test
 
 attach to stdin, stdout and stderr of a container
->docker attach <runningcontaainerid>
+>docker attach <runningcontaainerid>  
+
+Login to Docker cli
+>docker login
