@@ -13,4 +13,10 @@
 4. Start minikube  
 >minikube start
 
+5. Check all is running, First minikube
+>minikube status
+
+6. kubectl check
+>kubectl cluster-info
+
 ### Alternatively Docker Desktop's Kubernetes can be used instead of Minikube
