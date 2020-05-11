@@ -7,6 +7,6 @@ metadata:
 spec:
     containers:
         - name: client
-          image: sonuajayin/multi-client
+          image: sonuajayin/multi-worker
           ports:
             - containerPort: 3000
