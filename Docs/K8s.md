@@ -44,8 +44,19 @@ Note : Containers, name, port can give error when changing, only image can be ch
 |Services    |Sets up networking in a Kubernetes cluster |
 |Deployment  |Maintains a set of identical pods, ensuring that the have correct config and the right number exists   |  
 
-Get All Deployements  
+Get All deployments  
 >kubectl get deployments  
 
 get more details  
->kubectl get pods -o wide
+>kubectl get pods -o wide  
+
+To update a deployment we need to change the file but if the new image is pushed to hub and you reapply the config, K8s will just say file unchanged so below are solutions  
+1. Delete Pods (not recommended)  
+2. Add version in the image tag.(adds an extra step in our build pipeline)  
+3. Use and imperative command to update the image version the deployment should use.
+Below steps to follow  
+    a. tag the image with version number and push to docker hub  
+    b. run kubectl cmmand forcing the deployment to use the new image version  
+>kubectl set image <obejct_type>/<objectname> <container_name>=<new_image_to_use>  
+e.g object type = deployment, objectname=client-deployment(from yaml metadata), container_name=client(from yaml containers>name), new_image_to_use=sonuajayin/multi-client:v1
+>kubectl set image deployment/client-deployment client=sonuajayin/multi-client:v1

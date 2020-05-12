@@ -80,5 +80,7 @@ attach to stdin, stdout and stderr of a container
 >docker attach <runningcontaainerid>  
 
 Login to Docker cli
->docker login
+>docker login  
 
+Push newly built image to docker hub  
+>docker push <tagname>
