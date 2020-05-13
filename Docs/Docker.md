@@ -94,3 +94,6 @@ Login to Docker cli
 
 Push newly built image to docker hub  
 >docker push <tagname>  
+
+Remove al containers, networks images without containers associated, all build cache  
+>docker system prune -a

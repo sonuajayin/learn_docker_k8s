@@ -80,6 +80,13 @@ To find what its doing
 To use same debugging techniques we use in docker cli.  
 Manually kill containers to test K8s ability to self-heal.  
 Delete cached images in the node.  
-e.g >docker logs <running_container_id>
+e.g >docker logs RUNNING_CONTAINER_ID, docker exec -it CONTAINER_ID sh  
+
+Get logs from pods 
+>kubectl logs POD_ID  
+
+Start Shell in a pod  
+>kubectl exec -it POD_ID sh  
+
 
 
