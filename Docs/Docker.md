@@ -42,7 +42,10 @@ Create Image from a running container
 >docker commit -c "Command" <running_containerid>
 
 Exec command to do commands on running container
->docker exec -it <containerid> sh
+>docker exec -it <containerid> sh  
+
+Get logs of running container  
+>docker logs <running containerid>
 
 Port mapping
 >docker run -p incomingport:containerport <imageid>

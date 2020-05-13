@@ -59,4 +59,20 @@ Below steps to follow
     b. run kubectl cmmand forcing the deployment to use the new image version  
 >kubectl set image <obejct_type>/<objectname> <container_name>=<new_image_to_use>  
 e.g object type = deployment, objectname=client-deployment(from yaml metadata), container_name=client(from yaml containers>name), new_image_to_use=sonuajayin/multi-client:v1
->kubectl set image deployment/client-deployment client=sonuajayin/multi-client:v1
+>kubectl set image deployment/client-deployment client=sonuajayin/multi-client:v1  
+
+### Reconfigure CLI  
+Connect the CLI to use docker inside the kubernetes node (minikube)  
+>eval $(minikube docker-env)  
+This is only applicable to the current terminal, so its not a permanent change  
+
+To find what its doing  
+>minikube docker-env  
+
+### Why mess with docker in the node... 
+To use same debugging techniques we use in docker cli.  
+Manually kill containers to test K8s ability to self-heal.  
+Delete cached images in the node.  
+e.g >docker logs <running_container_id>
+
+
