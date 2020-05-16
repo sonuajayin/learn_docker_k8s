@@ -94,7 +94,32 @@ Start Shell in a pod
 >kubectl exec -it POD_ID sh  
 
 Apply all files in folder  
->kubectl apply -f FOLDER_NAME
+>kubectl apply -f FOLDER_NAME  
 
+Persistent Volume AccessModes  
+|Access Modes  |   |
+|--------------|---|
+|ReadWriteOnce |Can be used by a single node |
+|ReadOnlyOnce  |Multiple nodes can read from it |
+|ReadWriteMany |Can be read and written by many nodes   |  
+
+Get Storage Class  
+>kubectl get storageclass  
+>kubectl describe storageclass  
+
+Read more for Options : https://kubernetes.io/docs/concepts/storage/storage-classes/  
+
+Get PVCs  
+>kubectl get pvc  
+
+Create a Secret  
+>kubectl create secret generic SECRET_NAME --from-literal  key=value  
+
+e.g  
+>kubectl create secret generic pgpassword --from-literal  PG_PASSWORD=pgPass1234
+
+type of secrets (generic, docker-registry, tls)  
+SECRET_NAME is used as name and key as key in yaml file under secretKeyRef   
+read : https://kubernetes.io/docs/concepts/configuration/secret/  
 
 

@@ -15,8 +15,11 @@ using travis ci and aws elastic beanstalk
 >/.travis.yml
 
 Multi container docker application
->/complex  
+>/complex-elastic-beanstalk
 architecture and flow in folder, and also being deployed to ecs
 
 K8s simple Project  
->/simplek8s
+>/simplek8s  
+
+K8s multi container project  
+>/complex
