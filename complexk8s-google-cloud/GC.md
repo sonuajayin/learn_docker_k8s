@@ -29,5 +29,9 @@ After deployment open the IP of ingress controller unders services tab in GC
 To verify the Certificates go to GC Shell  
 >kubectl get certificates   
 
+>kubectl describe certificates  
 
+>kubectl get secrets  
+
+Above will get the tls secret listed
 
