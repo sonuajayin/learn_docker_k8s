@@ -37,12 +37,9 @@ After deployment open the IP of ingress controller unders services tab in GC
 5. Install the cert-manager helm chart
 > helm install cert-manager --namespace cert-manager --version v0.11.0 jetstack/cert-manager  
 
-cert-manager.io/v1alpha2
+6. Install the issuer and certificate yaml files with redeployement  
 
-solvers:
- -http01:
-     ingress:
-       class: nginx
+To verify the Certificates go to GC Shell  
+>kubectl get certificates  
 
-       cert-manager.io/cluster-issuer
 
