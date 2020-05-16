@@ -122,4 +122,11 @@ type of secrets (generic, docker-registry, tls)
 SECRET_NAME is used as name and key as key in yaml file under secretKeyRef   
 read : https://kubernetes.io/docs/concepts/configuration/secret/  
 
+Delete all deployments  
+>kubectl apply -f FOLDER_NAME  
+
+Delete all deployments  
+>kubectl delete -f FOLDER_NAME  
+
+
 
