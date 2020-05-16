@@ -34,6 +34,11 @@ Get All Objects of an object type
 To Remove the Object  
 >kubectl delete -f ORIGINAL_CONFIG_FILE  
 
+To delete object    
+>kubectl delete OBJECT_TYPE OBJECT_NAME  
+e.g kubectl delete deployment client-deployment  
+e.g kubectl delete service client-node-port  
+
 ### Update Objects  
 To update objects in the pod, just update the config file (yaml) and apply,master will take care of it.  
 Note : Kind and name in config files are unique identifiers so if updating these should not be changed. Even Filename should not change.  
@@ -87,6 +92,9 @@ Get logs from pods
 
 Start Shell in a pod  
 >kubectl exec -it POD_ID sh  
+
+Apply all files in folder  
+>kubectl apply -f FOLDER_NAME
 
 
 
