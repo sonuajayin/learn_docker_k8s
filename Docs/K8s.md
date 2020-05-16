@@ -11,13 +11,7 @@ Check wheter they are created
 >kubectl get pods  
 
 Get all services running  
->kubectl get services  
-
-Get the IP of minikube (since the services on local are running under that)  
->minikube ip  
-
-Above IP recieved will be used to run the application in local dev browser  
-  
+>kubectl get services    
 
 Try Killing the running container by finding the container by docker ps.  
 >docker kill RUNNING_CONTAINER_ID  
@@ -71,21 +65,6 @@ Below steps to follow
 e.g OBJECT_TYPE = deployment, OBJECT_NAME=client-deployment(from yaml metadata), CONTAINER_NAME=client(from yaml containers>name), NEW_IMAGE_TO_USE=sonuajayin/multi-client:v1  
 
 >kubectl set image deployment/client-deployment client=sonuajayin/multi-client:v1  
-
-### Reconfigure CLI  
-Connect the CLI to use docker inside the kubernetes node (minikube)  
->eval $(minikube docker-env)  
-
-This is only applicable to the current terminal, so its not a permanent change  
-
-To find what its doing  
->minikube docker-env  
-
-### Why mess with docker in the node...  
-To use same debugging techniques we use in docker cli.  
-Manually kill containers to test K8s ability to self-heal.  
-Delete cached images in the node.  
-e.g >docker logs RUNNING_CONTAINER_ID, docker exec -it CONTAINER_ID sh  
 
 Get logs from pods 
 >kubectl logs POD_ID  
