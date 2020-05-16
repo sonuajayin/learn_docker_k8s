@@ -22,22 +22,9 @@ After deployment open the IP of ingress controller unders services tab in GC
 ### https setup
 
 ### Cert Manager Installation  
-1. Apply yaml config file  
-> kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.11/deploy/manifest/00-crds.yaml  
+1. Follow https://cert-manager.io/docs/installation/kubernetes/ 
 
-2. Create the namespace for cert-manager  
-> kubectl create namespace cert-manager  
-
-3. Add jetstack helm repository  
->helm repo add jetstack https://charts.jetstack.io  
-
-4. Update your local Helm chart repo cache  
-> helm repo update  
-
-5. Install the cert-manager helm chart
-> helm install cert-manager --namespace cert-manager --version v0.11.0 jetstack/cert-manager  
-
-6. Install the issuer and certificate yaml files with redeployement  
+2. Install the issuer and certificate yaml files with redeployement  
 
 To verify the Certificates go to GC Shell  
 >kubectl get certificates  
