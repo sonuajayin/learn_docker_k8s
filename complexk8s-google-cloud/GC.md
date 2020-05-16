@@ -27,6 +27,7 @@ After deployment open the IP of ingress controller unders services tab in GC
 2. Install the issuer and certificate yaml files with redeployement  
 
 To verify the Certificates go to GC Shell  
->kubectl get certificates  
+>kubectl get certificates   
+
 
 
