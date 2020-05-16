@@ -10,7 +10,7 @@ docker push sonuajayin/multi-client:$SHA
 docker push sonuajayin/multi-server:$SHA
 docker push sonuajayin/multi-worker:$SHA
 
-kubectl apply -f k8s
+kubectl apply -f ./complexk8s-google-cloud/k8s
 
 kubectl set image deployments/server-deployment server=sonuajayin/multi-server:$SHA
 kubectl set image deployments/client-deployment client=sonuajayin/multi-client:$SHA
